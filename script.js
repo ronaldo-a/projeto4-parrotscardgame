@@ -1,11 +1,25 @@
 let cartas = [
-  'carta1',
-  'carta2',
-  'carta3',
-  'carta4',
-  'carta5',
-  'carta6',
-  'carta7'
+  `<div class="card">
+  <img src="imgsParrot/bobrossparrot.gif" alt="" />
+</div>`,
+  `<div class="card">
+<img src="imgsParrot/explodyparrot.gif" alt="" />
+</div>`,
+  `<div class="card">
+<img src="imgsParrot/fiestaparrot.gif" alt="" />
+</div>`,
+  `<div class="card">
+<img src="imgsParrot/metalparrot.gif" alt="" />
+</div>`,
+  `<div class="card">
+<img src="imgsParrot/revertitparrot.gif" alt="" />
+</div>`,
+  `<div class="card">
+<img src="imgsParrot/tripletsparrot.gif" alt="" />
+</div>`,
+  `<div class="card">
+<img src="imgsParrot/unicornparrot.gif" alt="" />
+</div>`
 ]
 
 let cartasJogo = []
@@ -21,6 +35,12 @@ function numeroCartas() {
   }
 
   cartasJogo.sort(comparador)
+
+  document.querySelector('.cards').innerHTML = ''
+  for (i = 0; i < cartasJogo.length; i++) {
+    document.querySelector('.cards').innerHTML =
+      document.querySelector('.cards').innerHTML + cartasJogo[i]
+  }
 }
 
 function comparador() {
