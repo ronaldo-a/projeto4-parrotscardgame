@@ -1,24 +1,31 @@
 let cartas = [
-  `<div class="card">
-  <img src="imgsParrot/bobrossparrot.gif" alt="" />
+  `<div class="card" onclick="virarCarta(this)">
+  <img class="back" src="imgsParrot/front.png" alt="" />
+  <img class="front escondido" src="imgsParrot/bobrossparrot.gif" alt="">
 </div>`,
-  `<div class="card">
-<img src="imgsParrot/explodyparrot.gif" alt="" />
+  `<div class="card" onclick="virarCarta(this)">
+<img class="back" src="imgsParrot/front.png" alt="" />
+  <img class="front escondido" src="imgsParrot/explodyparrot.gif" alt="" />
 </div>`,
-  `<div class="card">
-<img src="imgsParrot/fiestaparrot.gif" alt="" />
+  `<div class="card" onclick="virarCarta(this)">
+  <img class="back" src="imgsParrot/front.png" alt="" />
+<img class="front escondido" src="imgsParrot/fiestaparrot.gif" alt="" />
 </div>`,
-  `<div class="card">
-<img src="imgsParrot/metalparrot.gif" alt="" />
+  `<div class="card" onclick="virarCarta(this)">
+  <img class="back" src="imgsParrot/front.png" alt="" />
+<img class="front escondido" src="imgsParrot/metalparrot.gif" alt="" />
 </div>`,
-  `<div class="card">
-<img src="imgsParrot/revertitparrot.gif" alt="" />
+  `<div class="card" onclick="virarCarta(this)">
+  <img class="back" src="imgsParrot/front.png" alt="" />
+<img class="front escondido" src="imgsParrot/revertitparrot.gif" alt="" />
 </div>`,
-  `<div class="card">
-<img src="imgsParrot/tripletsparrot.gif" alt="" />
+  `<div class="card" onclick="virarCarta(this)">
+  <img class="back" src="imgsParrot/front.png" alt="" />
+<img class="front escondido" src="imgsParrot/tripletsparrot.gif" alt="" />
 </div>`,
-  `<div class="card">
-<img src="imgsParrot/unicornparrot.gif" alt="" />
+  `<div class="card" onclick="virarCarta(this)">
+  <img class="back" src="imgsParrot/front.png" alt="" />
+<img class="front escondido" src="imgsParrot/unicornparrot.gif" alt="" />
 </div>`
 ]
 
@@ -45,6 +52,11 @@ function numeroCartas() {
   } else {
     numeroCartas()
   }
+}
+
+function virarCarta(element) {
+  element.querySelector('.back').classList.toggle('escondido')
+  element.querySelector('.front').classList.toggle('escondido')
 }
 
 function comparador() {

@@ -41,3 +41,7 @@ img {
   width: 100px;
   height: 100px;
 }
+
+.escondido {
+  display: none
+}
