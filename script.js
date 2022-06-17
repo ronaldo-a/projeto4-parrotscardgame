@@ -29,17 +29,21 @@ numeroCartas()
 function numeroCartas() {
   let n = prompt('Com quantas cartas deseja jogar?')
 
-  for (i = 0; i < n / 2; i++) {
-    cartasJogo.push(cartas[i])
-    cartasJogo.push(cartas[i])
-  }
+  if (n % 2 === 0 && n >= 4 && n <= 14) {
+    for (i = 0; i < n / 2; i++) {
+      cartasJogo.push(cartas[i])
+      cartasJogo.push(cartas[i])
+    }
 
-  cartasJogo.sort(comparador)
+    cartasJogo.sort(comparador)
 
-  document.querySelector('.cards').innerHTML = ''
-  for (i = 0; i < cartasJogo.length; i++) {
-    document.querySelector('.cards').innerHTML =
-      document.querySelector('.cards').innerHTML + cartasJogo[i]
+    document.querySelector('.cards').innerHTML = ''
+    for (i = 0; i < cartasJogo.length; i++) {
+      document.querySelector('.cards').innerHTML =
+        document.querySelector('.cards').innerHTML + cartasJogo[i]
+    }
+  } else {
+    numeroCartas()
   }
 }
 
