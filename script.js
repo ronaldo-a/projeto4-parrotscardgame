@@ -30,6 +30,10 @@ let cartas = [
 ]
 
 let cartasJogo = []
+let cartaVirada1
+let cartaVirada2
+let cartaVirada1Txt
+let cartaVirada2Txt
 
 numeroCartas()
 
@@ -55,9 +59,31 @@ function numeroCartas() {
 }
 
 function virarCarta(element) {
-  element.querySelector('.back').classList.toggle('escondido')
-  element.querySelector('.front').classList.toggle('escondido')
+  if (
+    element.querySelector('.front').classList.contains('escondido') &&
+    cartaVirada2 !== undefined < 2
+  ) {
+    element.querySelector('.back').classList.add('escondido')
+    element.querySelector('.front').classList.remove('escondido')
+
+    if (cartaVirada1 === undefined) {
+      cartaVirada1Txt = element.innerHTML
+      cartaVirada1 = element.querySelector('.front')
+    } else {
+      cartaVirada2Txt = element.innerHTML
+      cartaVirada2 = element.querySelector('.front')
+    }
+  }
+
+  if (cartaVirada2 !== undefined) {
+    if (cartaVirada1Txt == cartaVirada2Txt) {
+      cartaVirada1.classList.add('matched')
+      cartaVirada2.classList.add('matched')
+    }
+  }
 }
+
+function compararCartas() {}
 
 function comparador() {
   return Math.random() - 0.5
