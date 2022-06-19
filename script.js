@@ -61,7 +61,7 @@ function numeroCartas() {
 function virarCarta(element) {
   if (
     element.querySelector('.front').classList.contains('escondido') &&
-    cartaVirada2 !== undefined < 2
+    cartaVirada2 === undefined
   ) {
     element.querySelector('.back').classList.add('escondido')
     element.querySelector('.front').classList.remove('escondido')
@@ -76,14 +76,33 @@ function virarCarta(element) {
   }
 
   if (cartaVirada2 !== undefined) {
-    if (cartaVirada1Txt == cartaVirada2Txt) {
-      cartaVirada1.classList.add('matched')
-      cartaVirada2.classList.add('matched')
+    if (cartaVirada1Txt === cartaVirada2Txt) {
+      compararCartas()
+    } else {
+      setTimeout(compararCartas, 1000)
     }
   }
 }
 
-function compararCartas() {}
+function compararCartas() {
+  if (cartaVirada1Txt === cartaVirada2Txt) {
+    cartaVirada1.classList.add('matched')
+    cartaVirada2.classList.add('matched')
+    cartaVirada1Txt = ''
+    cartaVirada1 = undefined
+    cartaVirada2Txt = ''
+    cartaVirada2 = undefined
+  } else {
+    cartaVirada1.classList.add('escondido')
+    cartaVirada1.parentNode.querySelector('.back').classList.remove('escondido')
+    cartaVirada2.classList.add('escondido')
+    cartaVirada2.parentNode.querySelector('.back').classList.remove('escondido')
+    cartaVirada1Txt = ''
+    cartaVirada1 = undefined
+    cartaVirada2Txt = ''
+    cartaVirada2 = undefined
+  }
+}
 
 function comparador() {
   return Math.random() - 0.5
