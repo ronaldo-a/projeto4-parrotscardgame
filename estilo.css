@@ -38,8 +38,6 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  transition: transform 10s;
 }
 
 .virada {
@@ -49,20 +47,6 @@ h1 {
 img {
   width: 100px;
   height: 100px;
-
-  transition: all 10s
-}
-
-.front {
-  transform: rotateY(180deg);
-}
-
-.virada .front {
-  transform: rotateY(0deg);
-}
-
-.virada .back {
-  transform: rotateY(-180deg)
 }
 
 .escondido {

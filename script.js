@@ -116,6 +116,22 @@ function compararCartas() {
 function endGame() {
   if (final === cartasJogo.length / 2) {
     alert(`Parabéns! Você ganhou o jogo em ${jogadas} jogadas!`)
+    jogarNovamente()
+  }
+}
+
+function jogarNovamente() {
+  let novamente = prompt('Deseja jogar novamente?')
+  if (novamente === 'sim' || novamente === 'Sim') {
+    document.querySelector('.cards').innerHTML = ''
+    cartasJogo = []
+    final = 0
+    jogadas = 0
+    numeroCartas()
+  } else if (novamente === 'não' || novamente === 'nao') {
+  } else {
+    alert(`Favor responder com "sim" ou não`)
+    jogarNovamente()
   }
 }
 
