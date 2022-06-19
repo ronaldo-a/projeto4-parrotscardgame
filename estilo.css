@@ -13,14 +13,17 @@ h1 {
   font-size: 56px;
   line-height: 65.63px;
   color: #75B79E;
+  text-align: center;
 
   margin-top: 40px;
   margin-bottom: 47px;
 }
 
 .cards {
+  width: 70vw;
+  height: 60vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: stretch;
   flex-wrap: wrap;
 }
@@ -35,17 +38,51 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  transition: transform 10s;
+}
+
+.virada {
+  transform: rotateY(-180deg);
 }
 
 img {
   width: 100px;
   height: 100px;
+
+  transition: all 10s
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+
+.virada .front {
+  transform: rotateY(0deg);
+}
+
+.virada .back {
+  transform: rotateY(-180deg)
 }
 
 .escondido {
-  display: none
+  display: none;
 }
 
 .matched {
-  height: 200px;
+  display: initial;
+}
+
+@media (max-width: 425px) {
+
+  .cards {
+    width: 80vw;
+    height: auto;
+    justify-content: space-between;
+  }
+
+  .card {
+    margin-bottom: 34px;
+  }
+
 }

@@ -67,6 +67,7 @@ function virarCarta(element) {
   ) {
     element.querySelector('.back').classList.add('escondido')
     element.querySelector('.front').classList.remove('escondido')
+    element.classList.add('virada')
 
     if (cartaVirada1 === undefined) {
       cartaVirada1Txt = element.innerHTML
@@ -101,19 +102,20 @@ function compararCartas() {
     cartaVirada1.parentNode.querySelector('.back').classList.remove('escondido')
     cartaVirada2.classList.add('escondido')
     cartaVirada2.parentNode.querySelector('.back').classList.remove('escondido')
+    cartaVirada1.parentNode.classList.remove('virada')
+    cartaVirada2.parentNode.classList.remove('virada')
     cartaVirada1Txt = ''
     cartaVirada1 = undefined
     cartaVirada2Txt = ''
     cartaVirada2 = undefined
   }
 
-  setTimeout(endGame, 1000)
+  setTimeout(endGame, 500)
 }
 
 function endGame() {
   if (final === cartasJogo.length / 2) {
     alert(`Parabéns! Você ganhou o jogo em ${jogadas} jogadas!`)
-    jogarNovamente()
   }
 }
 
