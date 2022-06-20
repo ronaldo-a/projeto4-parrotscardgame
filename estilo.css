@@ -57,6 +57,22 @@ img {
   display: initial;
 }
 
+.relogio {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+}
+
 @media (max-width: 425px) {
 
   .cards {
