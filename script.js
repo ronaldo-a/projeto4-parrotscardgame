@@ -59,6 +59,7 @@ function numeroCartas() {
     }
     paraRelogio = setInterval(relogio, 1000)
   } else {
+    alert('Favor digitar um número par entre 4 e 14')
     numeroCartas()
   }
 }
