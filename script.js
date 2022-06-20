@@ -71,6 +71,7 @@ function virarCarta(element) {
   ) {
     element.querySelector('.back').classList.add('escondido')
     element.querySelector('.front').classList.remove('escondido')
+    element.classList.add('giro')
 
     //Saber se é a primeira ou segunda carta virada
     if (cartaVirada1 === undefined) {
@@ -111,8 +112,10 @@ function compararCartas() {
     //desvira as cartas e limpa variáveis para serem usadas na função anterior
     cartaVirada1.classList.add('escondido')
     cartaVirada1.parentNode.querySelector('.back').classList.remove('escondido')
+    cartaVirada1.parentNode.classList.remove('giro')
     cartaVirada2.classList.add('escondido')
     cartaVirada2.parentNode.querySelector('.back').classList.remove('escondido')
+    cartaVirada2.parentNode.classList.remove('giro')
     cartaVirada1Txt = ''
     cartaVirada1 = undefined
     cartaVirada2Txt = ''

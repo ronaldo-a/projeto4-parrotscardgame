@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 
 body {
-  background-color: #EEF9BF;
+  background-color: #eef9bf;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 h1 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 56px;
   line-height: 65.63px;
-  color: #75B79E;
+  color: #75b79e;
   text-align: center;
 
   margin-top: 40px;
@@ -31,26 +31,48 @@ h1 {
 .card {
   width: 117px;
   height: 146px;
-  background-color: #A7E9AF;
-  border: 1px solid #99CEA8;
+  background-color: #a7e9af;
+  border: 1px solid #99cea8;
   border-radius: 5px;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  position: relative;
+  transition: all 0.5s;
 }
 
-.virada {
+.card.giro {
+  transform: rotateY(180deg);
+}
+
+.card .front {
+  position: absolute;
+  backface-visibility: hidden;
+  transition: all 0.5s;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+}
+
+.card .front.escondido {
+  transform: rotateY(180deg);
+}
+
+.card .back {
+  position: absolute;
+  backface-visibility: hidden;
+  transition: all 0.5s;
+  transform-style: preserve-3d;
+}
+
+.card .back.escondido {
   transform: rotateY(-180deg);
 }
 
 img {
   width: 100px;
   height: 100px;
-}
-
-.escondido {
-  display: none;
 }
 
 .matched {
@@ -68,13 +90,12 @@ img {
   width: 60px;
   height: 60px;
   border-radius: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 40px;
 }
 
 @media (max-width: 425px) {
-
   .cards {
     width: 80vw;
     height: auto;
@@ -84,5 +105,4 @@ img {
   .card {
     margin-bottom: 34px;
   }
-
 }
